@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+    commands:
+      - pip install --upgrade --force-reinstall . awscli 
+      - pip install xgboost sagemaker
+
+  build:
+    commands:
+      - export PYTHONUNBUFFERED=TRUE
+      - |
+        python3 pipeline.py \
+          --sm-pipeline-name $SM_PIPELINE_NAME \
+          --default-bucket $ARTIFACT_BUCKET \
+          --role-arn $SAGEMAKER_PIPELINE_ROLE_ARN \
+          --use-amt $USE_AMT \
+          --sm-model-deploy-lambda-arn $SM_MODEL_DEPLOY_LAMBDA_ARN
+      - echo "Create/Update of the SageMaker Pipeline and execution completed."

@@ -1,0 +1,7 @@
+{
+  "MainStackName":"SMPipelineRootStack",
+  "SageMakerPipelineName": "model-train-deploy-pipeline",
+  "SageMakerUserProfiles": ["User1", "User2"],
+  "USE_AMT": "yes"
+}
+
