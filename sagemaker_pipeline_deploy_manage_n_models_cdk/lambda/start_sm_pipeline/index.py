@@ -12,7 +12,7 @@ def lambda_handler(event, context):
         print("We are using dev environment")
 
         bucket="smpipelineexecutionstack-trainingbucketeb7bb5c9-kdxthutnl8ps"
-        key="training-dataset/DummyDim4/churn_clubbed.csv"
+        key="training-dataset/DummyDim3/churn_dummy_dim3.csv"
         sm_pipeline_name = "model-train-deploy-pipeline"
 
    
